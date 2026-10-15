@@ -79,8 +79,9 @@ h2 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; color
 .story-meta { font-family: var(--mono); font-size: 12px; color: var(--gray-500); margin-top: 20px; }
 
 /* before-tech era photos */
-.story-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 26px; align-items: end; }
+.story-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 26px; }
 .story-photos figure { margin: 0; }
+.story-photos .stack { display: grid; grid-template-columns: 1fr; gap: 18px; align-content: start; }
 .story-photos img { width: 100%; height: auto; display: block; border-radius: 10px; }
 .story-photos figcaption { font-family: var(--mono); font-size: 11px; color: var(--gray-500); margin-top: 8px; letter-spacing: 0.2px; }
 @media (max-width: 640px) { .story-photos { grid-template-columns: 1fr; } }
@@ -151,8 +152,8 @@ footer a:hover { color: var(--clay); }
     <div class="hero-wrap">
       <div>
         <div class="eyebrow">Technical Operations &amp; Infrastructure</div>
-        <h1>I build IT operations that scale when a business grows.</h1>
-        <p class="tag">Designing, implementing, and governing the infrastructure, service-delivery, and collaboration platforms that keep complex, growth-oriented companies running, so issues get solved before users feel them.</p>
+        <h1>Build to scale. Governed to last.</h1>
+        <p class="tag">I design, implement, and govern the service-delivery and collaboration platforms that keep organizations running. Growing companies get infrastructure that scales as fast as they do. Mature organizations get the efficiency and resilience to stay sharp. The result is the same: issues get solved before anyone feels them.</p>
       </div>
       <div class="hero-photo">
         <img src="./bertstone-headshot-square.jpg?v=3" alt="Portrait of Bert Stone">
@@ -163,7 +164,7 @@ footer a:hover { color: var(--clay); }
       <div class="stat"><div class="num">Fortune&nbsp;50</div><div class="lbl">clients incl. Meta, Google, Microsoft</div></div>
       <div class="stat"><div class="num">165</div><div class="lbl">people led across global teams</div></div>
       <div class="stat"><div class="num">$25M</div><div class="lbl">operating budget owned</div></div>
-      <div class="stat"><div class="num">180+</div><div class="lbl">production spaces + 16k conf rooms</div></div>
+      <div class="stat"><div class="num">80k</div><div class="lbl">users across 180+ production spaces and 16k conf rooms</div></div>
       <div class="stat"><div class="num">99%</div><div class="lbl">SLA compliance sustained</div></div>
     </div>
   </header>
@@ -183,15 +184,39 @@ footer a:hover { color: var(--clay); }
       <div class="card">
         <span class="pill">Infrastructure Operations</span>
         <h3>Platform Modernization</h3>
-        <p>Rebuilding and governing the infrastructure and collaboration stack an organization runs on, from endpoint to datacenter. Trusted to keep rooms that cannot fail running, including Microsoft's board of directors.</p>
+        <p>Standardizing and governing the infrastructure and collaboration stack an organization runs on, from endpoint to datacenter. Trusted to keep pivotal technology running for people and places that cannot fail.</p>
         <div class="meta">180+ spaces and 16k conference rooms governed</div>
       </div>
       <div class="card">
         <span class="pill">AI-Driven Operations</span>
         <h3>Operationalizing AI</h3>
-        <p>Using intelligent agents and home-built tooling to turn reactive support into proactive detection, before user impact. The same stack runs my own homelab.</p>
-        <div class="meta">Live on my own infrastructure</div>
+        <p>The agent era runs on tooling and infrastructure most operators only consume. I understand how it works under the hood, which is what lets me govern and lead a modern organization running on it.</p>
+        <div class="meta">Proactive detection, before user impact</div>
       </div>
+    </div>
+  </section>
+
+  <section id="impact">
+    <div class="sec-head">
+      <div class="eyebrow">Impact</div>
+      <h2>Proven at a scale most operators never touch.</h2>
+    </div>
+    <div class="story-copy">
+      <p><strong>The visibility layer.</strong> I built a single "at a glance" dashboard covering all 180+ Meta production spaces and 16,000 conference rooms: live status, exact build specs, software versions, technician notes. Thirty technicians ran it directly, over 200 operators worked from it, and 12 stakeholders reported from it as the source of truth.</p>
+      <p><strong>The show that cannot stop.</strong> Every year Meta Connect lands, and I lead the run: production, broadcast, streaming, breakout conference rooms, and the executive spaces alongside the main stage. The kind of week where a silent failure in a breakout room is a visible failure to some of the industry's most consequential people.</p>
+      <p><strong>Data over emotion.</strong> When I joined Meta's event fleet it was fragmented and hard to support. I brought real fleet data to the service owner and stakeholders, we adopted a standard, and pushed it out across deployment fast. Influence without authority, alignment by the numbers.</p>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="sec-head">
+      <div class="eyebrow">Writing</div>
+      <h2>Field notes from running real infrastructure.</h2>
+    </div>
+    <div class="blog-item">
+      <div class="date">2026-10-15</div>
+      <a class="title" href="./blog/hybrid-local-stack-cycling.html">A hybrid cloud/local stack for my cycling data, and what it means for enterprise ops</a>
+      <div class="cat">Ops</div>
     </div>
   </section>
 
@@ -209,23 +234,17 @@ footer a:hover { color: var(--clay); }
           <img src="./era-console.jpg" alt="A recording studio control room at Welcome to 1979, an analog console at the center" loading="lazy" />
           <figcaption>Welcome to 1979, Nashville: the analog room</figcaption>
         </figure>
-        <figure>
-          <img src="./era-crew.jpg" alt="Turbo Fruits with engineer Jeremy Ferguson in the studio, Nashville" loading="lazy" />
-          <figcaption>Turbo Fruits with engineer Jeremy Ferguson, Nashville</figcaption>
-        </figure>
+        <div class="stack">
+          <figure>
+            <img src="./era-live.jpg" alt="A live acoustic set at Nashville Art Crawl, in a historic hall with pipe organ and wooden pews, artist unknown" loading="lazy" />
+            <figcaption>Nashville Art Crawl, an acoustic set in a room built to carry sound</figcaption>
+          </figure>
+          <figure>
+            <img src="./era-crew.jpg" alt="Turbo Fruits with engineer Jeremy Ferguson in the studio, Nashville" loading="lazy" />
+            <figcaption>Turbo Fruits with engineer Jeremy Ferguson, Nashville</figcaption>
+          </figure>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <section id="blog">
-    <div class="sec-head">
-      <div class="eyebrow">Writing</div>
-      <h2>Field notes from running real infrastructure.</h2>
-    </div>
-    <div class="blog-item">
-      <div class="date">2026-10-15</div>
-      <a class="title" href="./blog/hybrid-local-stack-cycling.html">A hybrid cloud/local stack for my cycling data, and what it means for enterprise ops</a>
-      <div class="cat">Ops</div>
     </div>
   </section>
 
