@@ -1,0 +1,9 @@
+# Cloudflare Pages project for bertstone.com (static site)
+# Docs: https://developers.cloudflare.com/pages/
+# Project name must match the project created in the Cloudflare dashboard.
+name = "bertstone-site"
+pages_build_output_dir = "dist"
+
+[env.production]
+# The Pages project automagically gets a *.pages.dev URL.
+# Custom domain bertstone.com is attached in the dashboard once the zone is live.

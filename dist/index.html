@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bert Stone · Technical Operations & Infrastructure</title>
+<style>
+:root {
+  --ivory: #FAF9F5; --white: #FFFFFF; --slate: #141413;
+  --clay: #D97757; --olive: #788C5D; --rust: #B04A3F; --oat: #E3DACC;
+  --gray-150: #F0EEE6; --gray-300: #D1CFC5; --gray-500: #87867F; --gray-700: #3D3D3A;
+  --border: 1.5px solid var(--gray-300);
+  --radius-panel: 12px; --radius-row: 8px; --radius-pill: 999px;
+  --serif: ui-serif, Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--ivory); color: var(--gray-700);
+  font-family: var(--sans); line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding: 0 20px 100px;
+}
+.page { max-width: 1040px; margin: 0 auto; }
+
+/* top nav */
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0; border-bottom: var(--border);
+}
+.nav .brand { font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em; color: var(--gray-700); }
+.nav .brand b { color: var(--clay); font-weight: 600; }
+.nav .links { display: flex; gap: 26px; }
+.nav .links a { text-decoration: none; color: var(--gray-500); font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+.nav .links a:hover { color: var(--clay); }
+.nav .links a.cta { color: var(--clay); border: 1px solid var(--clay); padding: 6px 14px; border-radius: var(--radius-pill); }
+
+/* hero */
+.hero { padding: 72px 0 48px; }
+.hero-wrap { display: grid; grid-template-columns: 1fr 320px; gap: 48px; align-items: center; }
+.hero-photo { position: relative; }
+.hero-photo img {
+  width: 100%; height: auto; display: block;
+  border-radius: 16px;
+  border: 1px solid var(--gray-300); box-shadow: 0 20px 50px -20px rgba(20,20,19,0.35);
+}
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-500); }
+h1 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; color: var(--slate); font-size: 54px; line-height: 1.1; margin: 14px 0 18px; }
+.hero p.tag { font-size: 19px; max-width: 640px; color: var(--gray-700); }
+.hero .stats {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px;
+}
+.stat { background: var(--white); border: var(--border); border-radius: var(--radius-panel); padding: 18px; }
+.stat .num { font-family: var(--serif); font-size: 32px; color: var(--slate); letter-spacing: -0.01em; }
+.stat .lbl { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin-top: 4px; }
+
+/* sections */
+section { padding: 56px 0; border-top: var(--border); }
+h2 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; color: var(--slate); font-size: 30px; margin: 8px 0 6px; }
+.sec-head { margin-bottom: 30px; }
+
+/* work grid */
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card {
+  background: var(--white); border: var(--border); border-radius: var(--radius-panel); padding: 22px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.card .tag { font-family: var(--mono); font-size: 11px; color: var(--clay); text-transform: uppercase; letter-spacing: 0.06em; }
+.card h3 { font-family: var(--serif); font-weight: 500; font-size: 20px; color: var(--slate); letter-spacing: -0.01em; }
+.card p { font-size: 14px; color: var(--gray-700); flex: 1; }
+.card .meta { font-family: var(--mono); font-size: 11px; color: var(--gray-500); }
+.pill { border-radius: var(--radius-pill); padding: 3px 10px; font-family: var(--mono); font-size: 11px; background: var(--oat); color: var(--gray-700); align-self: flex-start; }
+
+/* blog list */
+.story-copy { max-width: 720px; }
+.story-copy p { font-size: 17px; color: var(--gray-700); margin-bottom: 16px; }
+.story-copy p strong { color: var(--slate); font-weight: 600; }
+.story-meta { font-family: var(--mono); font-size: 12px; color: var(--gray-500); margin-top: 20px; }
+
+/* before-tech era photos */
+.story-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 26px; align-items: end; }
+.story-photos figure { margin: 0; }
+.story-photos img { width: 100%; height: auto; display: block; border-radius: 10px; }
+.story-photos figcaption { font-family: var(--mono); font-size: 11px; color: var(--gray-500); margin-top: 8px; letter-spacing: 0.2px; }
+@media (max-width: 640px) { .story-photos { grid-template-columns: 1fr; } }
+
+/* blog list */
+.blog-item {
+  display: grid; grid-template-columns: 120px 1fr auto; gap: 18px; align-items: baseline;
+  padding: 16px 0; border-bottom: 1px solid var(--gray-150);
+}
+.blog-item:last-child { border-bottom: none; }
+.blog-item .date { font-family: var(--mono); font-size: 12px; color: var(--gray-500); }
+.blog-item .title { font-family: var(--serif); font-size: 18px; color: var(--slate); text-decoration: none; }
+.blog-item .title:hover { color: var(--clay); }
+.blog-item .cat { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--clay); }
+
+/* blog note */
+.blog-note { font-size: 14px; color: var(--gray-500); margin-bottom: 8px; }
+
+/* footer */
+footer { margin-top: 40px; padding: 40px 0 20px; border-top: var(--border); display: flex; justify-content: space-between; font-family: var(--mono); font-size: 12px; color: var(--gray-500); }
+footer a { color: var(--gray-500); text-decoration: none; }
+footer a:hover { color: var(--clay); }
+
+@media (max-width: 860px) {
+  .hero .stats, .grid3 { grid-template-columns: 1fr; }
+  .hero-wrap { grid-template-columns: 1fr; }
+  .hero-photo { max-width: 280px; margin: 0 auto 24px; }
+  h1 { font-size: 38px; }
+  .nav .links a:not(.cta) { display: none; }
+  .blog-item { grid-template-columns: 1fr; gap: 4px; }
+  .nav { flex-direction: column; gap: 12px; }
+}
+</style>
+<meta name="description" content="IT operations and technical services leader with 12+ years running global managed services and infrastructure for Fortune 50 clients. Director-level scope: 165-person global teams, a $25M budget, 99% SLA compliance, and MTTR down 35%.">
+<link rel="canonical" href="https://bertstone.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bert Stone">
+<meta property="og:title" content="Bert Stone - Technical Operations &amp; Infrastructure">
+<meta property="og:description" content="IT operations and technical services leader with 12+ years running global managed services and infrastructure for Fortune 50 clients. Director-level scope: 165-person global teams, a $25M budget, 99% SLA compliance, and MTTR down 35%.">
+<meta property="og:url" content="https://bertstone.com/">
+<meta property="og:image" content="https://bertstone.com/bertstone-headshot-square.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bert Stone - Technical Operations &amp; Infrastructure">
+<meta name="twitter:description" content="IT operations and technical services leader with 12+ years running global managed services and infrastructure for Fortune 50 clients. Director-level scope: 165-person global teams, a $25M budget, 99% SLA compliance, and MTTR down 35%.">
+<meta name="twitter:image" content="https://bertstone.com/bertstone-headshot-square.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Bert Stone","jobTitle":"Director of IT Operations & Managed Services","url":"https://bertstone.com/","image":"https://bertstone.com/bertstone-headshot-square.jpg","sameAs":["https://www.linkedin.com/in/bert-stone-360666100","https://github.com/stonebert-png"],"knowsAbout":["IT operations","managed services","IT service management","infrastructure operations","AI agent infrastructure","Microsoft 365"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"University of Oregon"},{"@type":"EducationalOrganization","name":"Conservatory of Recording Arts & Sciences"}]}
+</script>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <div class="brand">bert<b>stone</b>.com</div>
+    <div class="links">
+      <a href="#work">Work</a>
+      <a href="#story">Before tech</a>
+      <a href="#now">Now</a>
+      <a href="#blog">Blog</a>
+      <a href="#lab">Homelab</a>
+      <a href="https://github.com/stonebert-png">GitHub</a>
+      <a href="./bert-stone-resume.pdf">Resume</a>
+      <a class="cta" href="#contact">Get in touch</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-wrap">
+      <div>
+        <div class="eyebrow">Technical Operations &amp; Infrastructure</div>
+        <h1>I build IT operations that scale when a business grows.</h1>
+        <p class="tag">Designing, implementing, and governing the infrastructure, service-delivery, and collaboration platforms that keep complex, growth-oriented companies running, so issues get solved before users feel them.</p>
+      </div>
+      <div class="hero-photo">
+        <img src="./bertstone-headshot-square.jpg?v=3" alt="Portrait of Bert Stone">
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">12+</div><div class="lbl">yrs IT ops &amp; managed services</div></div>
+      <div class="stat"><div class="num">Fortune&nbsp;50</div><div class="lbl">clients incl. Meta, Google, Microsoft</div></div>
+      <div class="stat"><div class="num">165</div><div class="lbl">people led across global teams</div></div>
+      <div class="stat"><div class="num">$25M</div><div class="lbl">operating budget owned</div></div>
+      <div class="stat"><div class="num">180+</div><div class="lbl">production spaces + 16k conf rooms</div></div>
+      <div class="stat"><div class="num">99%</div><div class="lbl">SLA compliance sustained</div></div>
+    </div>
+  </header>
+
+  <section id="work">
+    <div class="sec-head">
+      <div class="eyebrow">What I do</div>
+      <h2>Operational clarity, engineered.</h2>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <span class="pill">Service Governance</span>
+        <h3>KPI &amp; SLA Frameworks</h3>
+        <p>KPIs and SLAs that measure service and fleet health, not tickets closed: uptime, quality of service, proper escalations, and real root cause analysis. I bring the data, not the emotion, to align design and deployment.</p>
+        <div class="meta">Owned a $25M budget &middot; 99% SLA compliance &middot; MTTR down 35%</div>
+      </div>
+      <div class="card">
+        <span class="pill">Infrastructure Operations</span>
+        <h3>Platform Modernization</h3>
+        <p>Rebuilding and governing the infrastructure and collaboration stack an organization runs on, from endpoint to datacenter. Trusted to keep rooms that cannot fail running, including Microsoft's board of directors.</p>
+        <div class="meta">180+ spaces and 16k conference rooms governed</div>
+      </div>
+      <div class="card">
+        <span class="pill">AI-Driven Operations</span>
+        <h3>Operationalizing AI</h3>
+        <p>Using intelligent agents and home-built tooling to turn reactive support into proactive detection, before user impact. The same stack runs my own homelab.</p>
+        <div class="meta">Live on my own infrastructure</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="sec-head">
+      <div class="eyebrow">Before tech</div>
+      <h2>I learned to speak engineer, operations, and leadership.</h2>
+    </div>
+    <div class="story-copy">
+      <p>Before tech I was a recording engineer, which turned out to be the same discipline I practice now: keeping critical systems running for the people who depend on them. I studied audio engineering at the Conservatory of Recording Arts and Sciences, then moved to Nashville for a six-month internship at Welcome to 1979, a studio built around vintage analog gear.</p>
+      <p>I stayed on as Chris Mara's assistant and house assistant, learning to repair and calibrate American-made MCI consoles and tape machines: schematics, signal flow, soldering, calibration. I sat in sessions with Jeremy Ferguson on Turbo Fruits' <em>Echo Kid</em>, then became chief audio engineer at Quaver Music, a startup building a digital music curriculum, where I built the network storage, pioneered the on-set and live-audio workflows, and mixed The Protomen's live Queen cover album, <em>A Night of Queen</em>, at Welcome to 1979. A family relocation brought me to Seattle, and after a year running live sound at El Corazon, I stopped building the infrastructure that powers other people's art and started running the technology itself.</p>
+      <div class="story-meta">Chris Mara, founder of Welcome to 1979 &middot; Jeremy Ferguson, engineer &middot; The Protomen, <em>A Night of Queen</em> (2012)</div>
+      <div class="story-photos">
+        <figure>
+          <img src="./era-console.jpg" alt="A recording studio control room at Welcome to 1979, an analog console at the center" loading="lazy" />
+          <figcaption>Welcome to 1979, Nashville: the analog room</figcaption>
+        </figure>
+        <figure>
+          <img src="./era-crew.jpg" alt="Turbo Fruits with engineer Jeremy Ferguson in the studio, Nashville" loading="lazy" />
+          <figcaption>Turbo Fruits with engineer Jeremy Ferguson, Nashville</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="sec-head">
+      <div class="eyebrow">Writing</div>
+      <h2>Field notes from running real infrastructure.</h2>
+    </div>
+    <p class="blog-note">First pieces in progress. Topics queued:</p>
+    <div class="blog-item">
+      <div class="date">Soon</div>
+      <span class="title">Self-hosting a password manager: Vaultwarden on one container</span>
+      <div class="cat">Homelab</div>
+    </div>
+    <div class="blog-item">
+      <div class="date">Soon</div>
+      <span class="title">Giving an AI agent a real inbox, and the controls that make it safe</span>
+      <div class="cat">Ops</div>
+    </div>
+    <div class="blog-item">
+      <div class="date">Soon</div>
+      <span class="title">Measurement is the product: KPIs around service health, not ticket counts</span>
+      <div class="cat">Governance</div>
+    </div>
+    <div class="blog-item">
+      <div class="date">Soon</div>
+      <span class="title">Running a local LLM stack that earns its keep</span>
+      <div class="cat">Homelab</div>
+    </div>
+  </section>
+
+  <section id="lab">
+    <div class="sec-head">
+      <div class="eyebrow">The Homelab</div>
+      <h2>A working operations environment, not a shelf.</h2>
+      <p class="blog-note" style="max-width:640px;">Where I test the ideas I bring to work, on real hardware, under real constraints.</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <span class="pill">Unraid Server</span>
+        <h3>12-container stack</h3>
+        <p>One NAS box running media, automation, self-hosted tools, and two local LLM inference endpoints. Built to stay up, and to be rebuilt from config when it does not.</p>
+        <div class="meta">ATX · RTX 3050 · 3×8TB + cache</div>
+      </div>
+      <div class="card">
+        <span class="pill">Local LLMs</span>
+        <h3>Vision and reasoning on-prem</h3>
+        <p>Qwen-class models serving vision and text analysis entirely on local hardware. No cloud, full data ownership, predictable cost.</p>
+      </div>
+      <div class="card">
+        <span class="pill">AI Agent</span>
+        <h3>An agent that runs the lab</h3>
+        <p>A personally engineered agent (Hermes Agent, MCP, multi-agent orchestration) that triages incoming work and runs this site. The lab itself stays off public view.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="now">
+    <div class="sec-head">
+      <div class="eyebrow">Now</div>
+      <h2>Currently, civic infrastructure.</h2>
+    </div>
+    <div class="story-copy">
+      <p>Through 2026 I work local county elections. I started as a poll manager for a single precinct and now serve as Election Clerk and Area Manager for the November 2026 general election.</p>
+      <p>Elections are highly regulated and must hold 100% accuracy under intense public scrutiny. It is the same discipline as enterprise service governance, applied where a mistake is not an option: process, chain of custody, and accountability.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="sec-head">
+      <div class="eyebrow">Contact</div>
+      <h2>Let's talk operations.</h2>
+      <p style="margin-top:12px;">Open to Director and Senior Manager opportunities in IT operations, managed services, and infrastructure. Open to San Francisco, New York, and remote.</p>
+      <p style="margin-top:8px;">
+        <a href="https://www.linkedin.com/in/bert-stone-360666100" style="color:var(--clay)">LinkedIn</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://github.com/stonebert-png" style="color:var(--clay)">GitHub</a>
+        &nbsp;&middot;&nbsp;
+        <a href="./bert-stone-resume.pdf" style="color:var(--clay)">Download resume (PDF)</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div>bert stone</div>
+    <div>built and served by my own agent on my homelab</div>
+  </footer>
+
+</div>
+</body>
+</html>
