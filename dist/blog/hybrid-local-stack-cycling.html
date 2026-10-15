@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A hybrid cloud/local stack for my cycling data, and what it means for enterprise ops · Bert Stone</title>
+<style>
+:root {
+  --ivory: #FAF9F5; --white: #FFFFFF; --slate: #141413;
+  --clay: #D97757; --olive: #788C5D; --rust: #B04A3F; --oat: #E3DACC;
+  --gray-150: #F0EEE6; --gray-300: #D1CFC5; --gray-500: #87867F; --gray-700: #3D3D3A;
+  --border: 1.5px solid var(--gray-300);
+  --radius-panel: 12px; --radius-pill: 999px;
+  --serif: ui-serif, Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--ivory); color: var(--gray-700);
+  font-family: var(--sans); line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding: 0 20px 100px;
+}
+.page { max-width: 760px; margin: 0 auto; }
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0; border-bottom: var(--border);
+}
+.nav .brand { font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em; color: var(--gray-700); }
+.nav .brand b { color: var(--clay); font-weight: 600; }
+.nav .links { display: flex; gap: 22px; }
+.nav .links a { text-decoration: none; color: var(--gray-500); font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+.nav .links a:hover { color: var(--clay); }
+article { padding: 56px 0 24px; }
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-500); }
+h1 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; color: var(--slate); font-size: 40px; line-height: 1.15; margin: 14px 0 10px; }
+.byline { font-family: var(--mono); font-size: 12px; color: var(--gray-500); margin-bottom: 34px; }
+.byline .cat { color: var(--clay); text-transform: uppercase; letter-spacing: 0.05em; }
+.body p { font-size: 18px; color: var(--gray-700); margin-bottom: 22px; }
+.body p strong { color: var(--slate); font-weight: 600; }
+footer { margin-top: 40px; padding: 40px 0 20px; border-top: var(--border); display: flex; justify-content: space-between; font-family: var(--mono); font-size: 12px; color: var(--gray-500); }
+footer a { color: var(--gray-500); text-decoration: none; }
+footer a:hover { color: var(--clay); }
+@media (max-width: 640px) {
+  h1 { font-size: 30px; }
+  .nav .links a:not(.cta) { display: none; }
+}
+</style>
+<meta name="description" content="How Bert Stone runs a hybrid cloud/local stack to analyze his cycling data, and what it teaches him about enterprise IT/AV operations: pipeline control, no API costs, no lock-in, and an active learning layer.">
+<link rel="canonical" href="https://bertstone.com/blog/hybrid-local-stack-cycling.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Bert Stone">
+<meta property="og:title" content="A hybrid cloud/local stack for my cycling data, and what it means for enterprise ops">
+<meta property="og:description" content="How Bert Stone runs a hybrid cloud/local stack to analyze his cycling data, and what it teaches him about enterprise IT/AV operations.">
+<meta property="og:url" content="https://bertstone.com/blog/hybrid-local-stack-cycling.html">
+<meta property="og:image" content="https://bertstone.com/bertstone-headshot-square.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A hybrid cloud/local stack for my cycling data, and what it means for enterprise ops">
+<meta name="twitter:description" content="How Bert Stone runs a hybrid cloud/local stack to analyze his cycling data, and what it teaches him about enterprise IT/AV operations.">
+<meta name="twitter:image" content="https://bertstone.com/bertstone-headshot-square.jpg">
+</head>
+<body>
+<div class="page">
+  <nav class="nav">
+    <div class="brand">bert<b>stone</b>.com</div>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/#blog">Blog</a>
+      <a href="https://github.com/stonebert-png">GitHub</a>
+      <a href="/bert-stone-resume.pdf">Resume</a>
+    </div>
+  </nav>
+
+  <article>
+    <div class="eyebrow">Field Notes</div>
+    <h1>A hybrid cloud/local stack for my cycling data, and what it means for enterprise ops</h1>
+    <div class="byline">2026-10-15 &nbsp;·&nbsp; <span class="cat">Ops</span></div>
+
+    <div class="body">
+      <p>The workflow I am most excited about right now is running a hybrid cloud/local stack to analyze my cycling data.</p>
+      <p>It works like this. My agent fetches ride data over MCP and downloads it to my local NAS. From there a local model crunches the numbers: trend analysis, training load, custom workout plans. It stores the report locally. No data leaves my network once it arrives.</p>
+      <p>Now the shift to enterprise IT/AV ops. The parallels could not be cleaner.</p>
+      <p>I can store and analyze incident trends, ticket patterns, and technician performance data in an environment where my team has total control over the pipeline. No third-party API costs. No data egress fees. No vendor lock-in on my own operational history.</p>
+      <p>There is a security angle, and it matters: keeping PII and confidential data out of the cloud. But the bigger advantage for me is the active learning layer. You build historical context over time instead of packaging up and shipping huge datasets to the cloud again and again. Every run makes your local model smarter about your specific environment.</p>
+      <p>Listening to the fans spin up on my homelab while a local model crunches ride data and comes back with insights I actually use? That is the kind of thing that makes me excited about where this is headed, at home and at work.</p>
+      <p>The discipline is the same whether the fleet is bikes or ticket queues: keep the data where it has to stay, build context where it compounds, and let the AI do the heavy lifting under your control.</p>
+    </div>
+  </article>
+
+  <footer>
+    <div>bert stone</div>
+    <div><a href="/#blog">Back to the site</a></div>
+  </footer>
+</div>
+</body>
+</html>
