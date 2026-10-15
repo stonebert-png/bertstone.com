@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 560" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <!-- background -->
+  <rect width="920" height="560" fill="#FAF9F5"/>
+  <!-- title -->
+  <text x="460" y="40" text-anchor="middle" font-family="ui-serif, Georgia, serif" font-size="26" fill="#141413" font-weight="500">The stack at a glance</text>
+  <text x="460" y="64" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="#87867F" letter-spacing="0.08em">RIDE DATA → LOCAL PIPELINE → INSIGHTS</text>
+
+  <!-- network boundary -->
+  <rect x="40" y="100" width="840" height="330" rx="16" fill="#FFFFFF" stroke="#D1CFC5" stroke-width="1.5"/>
+  <rect x="40" y="100" width="840" height="40" rx="16" fill="#E3DACC"/>
+  <rect x="40" y="126" width="840" height="14" fill="#E3DACC"/>
+  <text x="60" y="126" font-family="ui-monospace, monospace" font-size="12" fill="#3D3D3A" letter-spacing="0.06em">YOUR NETWORK. NO DATA LEAVES AFTER IT ARRIVES.</text>
+
+  <!-- feedback loop: Reports -> back to Local LLM (active learning) -->
+  <text x="716" y="170" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#788C5D" letter-spacing="0.03em">feedback / retraining</text>
+  <g stroke="#788C5D" stroke-width="2" fill="none">
+    <path d="M 782 200 C 782 178, 668 178, 668 200" marker-end="url(#arrBack)"/>
+  </g>
+
+  <!-- nodes (row y=196, box h=110) -->
+  <!-- 1 Agent -->
+  <rect x="70" y="196" width="180" height="110" rx="10" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+  <text x="160" y="234" text-anchor="middle" font-size="16" fill="#141413" font-weight="600">Agent</text>
+  <text x="160" y="258" text-anchor="middle" font-size="12" fill="#87867F">fetches ride data</text>
+  <text x="160" y="276" text-anchor="middle" font-size="12" fill="#87867F">via MCP</text>
+
+  <!-- 2 NAS -->
+  <rect x="300" y="196" width="160" height="110" rx="10" fill="#FFFFFF" stroke="#D1CFC5" stroke-width="1.5"/>
+  <text x="380" y="234" text-anchor="middle" font-size="16" fill="#141413" font-weight="600">Local NAS</text>
+  <text x="380" y="258" text-anchor="middle" font-size="12" fill="#87867F">where the data</text>
+  <text x="380" y="276" text-anchor="middle" font-size="12" fill="#87867F">lands and stays</text>
+
+  <!-- 3 Local model -->
+  <rect x="510" y="196" width="180" height="110" rx="10" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+  <text x="600" y="234" text-anchor="middle" font-size="16" fill="#141413" font-weight="600">Local LLM</text>
+  <text x="600" y="258" text-anchor="middle" font-size="12" fill="#87867F">trends · training load</text>
+  <text x="600" y="276" text-anchor="middle" font-size="12" fill="#87867F">· workout plans</text>
+
+  <!-- 4 Reports -->
+  <rect x="740" y="196" width="120" height="110" rx="10" fill="#FFFFFF" stroke="#D1CFC5" stroke-width="1.5"/>
+  <text x="800" y="234" text-anchor="middle" font-size="16" fill="#141413" font-weight="600">Reports</text>
+  <text x="800" y="258" text-anchor="middle" font-size="12" fill="#87867F">stored</text>
+  <text x="800" y="276" text-anchor="middle" font-size="12" fill="#87867F">locally</text>
+
+  <!-- arrows between nodes -->
+  <g stroke="#D97757" stroke-width="2.5" fill="none">
+    <path d="M252 251 H 296" marker-end="url(#arr)"/>
+    <path d="M462 251 H 506" marker-end="url(#arr)"/>
+    <path d="M692 251 H 736" marker-end="url(#arr)"/>
+  </g>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#D97757"/>
+    </marker>
+    <marker id="arrBack" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#788C5D"/>
+    </marker>
+  </defs>
+
+  <!-- output note under the row -->
+  <text x="460" y="356" text-anchor="middle" font-size="13" fill="#3D3D3A">Every run makes the local model smarter about your specific environment.</text>
+  <text x="460" y="376" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#87867F" letter-spacing="0.03em">the active learning layer</text>
+
+  <!-- enterprise parallel band -->
+  <rect x="40" y="440" width="840" height="96" rx="12" fill="#788C5D" opacity="0.08"/>
+  <rect x="40" y="440" width="840" height="96" rx="12" fill="none" stroke="#788C5D" stroke-width="1.5"/>
+  <text x="460" y="466" text-anchor="middle" font-family="ui-serif, Georgia, serif" font-size="16" fill="#141413" font-weight="500">One pipeline, at enterprise scale</text>
+  <text x="460" y="492" text-anchor="middle" font-size="13" fill="#3D3D3A">incident trends · ticket patterns · technician performance</text>
+  <text x="460" y="514" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#87867F" letter-spacing="0.03em">total control · no API costs · no egress fees · no lock-in</text>
+</svg>

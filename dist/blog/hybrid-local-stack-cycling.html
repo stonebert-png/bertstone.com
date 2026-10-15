@@ -80,6 +80,9 @@ footer a:hover { color: var(--clay); }
     <div class="body">
       <p>The workflow I am most excited about right now is running a hybrid cloud/local stack to analyze my cycling data.</p>
       <p>It works like this. My agent fetches ride data over MCP and downloads it to my local NAS. From there a local model crunches the numbers: trend analysis, training load, custom workout plans. It stores the report locally. No data leaves my network once it arrives.</p>
+      <figure style="margin:30px 0;">
+        <img src="hybrid-stack-diagram.svg" alt="Diagram of the hybrid cloud/local stack: ride data flows over MCP into a local NAS, then into a local LLM, then to locally-stored reports, with a feedback loop back to the model." style="width:100%; height:auto; border-radius:12px; border:1px solid var(--gray-300);">
+      </figure>
       <p>Now the shift to enterprise IT/AV ops. The parallels could not be cleaner.</p>
       <p>I can store and analyze incident trends, ticket patterns, and technician performance data in an environment where my team has total control over the pipeline. No third-party API costs. No data egress fees. No vendor lock-in on my own operational history.</p>
       <p>There is a security angle, and it matters: keeping PII and confidential data out of the cloud. But the bigger advantage for me is the active learning layer. You build historical context over time instead of packaging up and shipping huge datasets to the cloud again and again. Every run makes your local model smarter about your specific environment.</p>
