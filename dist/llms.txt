@@ -1,0 +1,25 @@
+# Bert Stone
+
+Technical operations and infrastructure leader. I design, implement, and govern the service-delivery and collaboration platforms that keep organizations running.
+
+For hiring managers: Director and Manager level IT operations, managed services, and technical operations. Contact through LinkedIn (linkedin.com/in/bert-stone-360666100).
+
+## About
+- Technical Operations & Infrastructure
+- 12+ years IT operations and managed services
+- Fortune 50 clients; 165 people led; $25M operating budget
+- 80k users across 180+ production spaces and 16k conference rooms
+- 99% SLA compliance sustained
+
+## Reading
+- Blog: https://bertstone.com/#blog
+  - More than half the web's traffic isn't human: https://bertstone.com/blog/bot-traffic-not-human
+  - The true cost of AI, and what it means for technical operations: https://bertstone.com/blog/true-cost-of-ai
+  - A hybrid cloud/local stack for my cycling data, and what it means for enterprise ops: https://bertstone.com/blog/hybrid-local-stack-cycling
+
+## Resume
+- https://bertstone.com/bert-stone-resume.pdf
+
+## Also
+- GitHub: https://github.com/stonebert-png
+- LinkedIn: https://www.linkedin.com/in/bert-stone-360666100
