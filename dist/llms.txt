@@ -16,6 +16,7 @@ For hiring managers: Director and Manager level IT operations, managed services,
   - More than half the web's traffic isn't human: https://bertstone.com/blog/bot-traffic-not-human
   - The true cost of AI, and what it means for technical operations: https://bertstone.com/blog/true-cost-of-ai
   - A hybrid cloud/local stack for my cycling data, and what it means for enterprise ops: https://bertstone.com/blog/hybrid-local-stack-cycling
+  - Three weeks before the election, I became the elections department IT guy: https://bertstone.com/blog/election-work
 
 ## Resume
 - https://bertstone.com/bert-stone-resume.pdf

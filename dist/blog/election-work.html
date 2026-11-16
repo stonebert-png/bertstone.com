@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three weeks before the election, I became the elections department IT guy · Bert Stone</title>
+<style>
+:root {
+  --ivory: #FAF9F5; --white: #FFFFFF; --slate: #141413;
+  --clay: #D97757; --olive: #788C5D; --rust: #B04A3F; --oat: #E3DACC;
+  --gray-150: #F0EEE6; --gray-300: #D1CFC5; --gray-500: #87867F; --gray-700: #3D3D3A;
+  --border: 1.5px solid var(--gray-300);
+  --radius-panel: 12px; --radius-pill: 999px;
+  --serif: ui-serif, Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--ivory); color: var(--gray-700);
+  font-family: var(--sans); line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding: 0 20px 100px;
+}
+.page { max-width: 760px; margin: 0 auto; }
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0; border-bottom: var(--border);
+}
+.nav .brand { font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em; color: var(--gray-700); }
+.nav .brand b { color: var(--clay); font-weight: 600; }
+.nav .links { display: flex; gap: 22px; }
+.nav .links a { text-decoration: none; color: var(--gray-500); font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+.nav .links a:hover { color: var(--clay); }
+article { padding: 56px 0 24px; }
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-500); }
+h1 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; color: var(--slate); font-size: 40px; line-height: 1.15; margin: 14px 0 10px; }
+.byline { font-family: var(--mono); font-size: 12px; color: var(--gray-500); margin-bottom: 34px; }
+.byline .cat { color: var(--clay); text-transform: uppercase; letter-spacing: 0.05em; }
+.body p { font-size: 18px; color: var(--gray-700); margin-bottom: 22px; }
+.body p strong { color: var(--slate); font-weight: 600; }
+footer { margin-top: 40px; padding: 40px 0 20px; border-top: var(--border); display: flex; justify-content: space-between; font-family: var(--mono); font-size: 12px; color: var(--gray-500); }
+footer a { color: var(--gray-500); text-decoration: none; }
+footer a:hover { color: var(--clay); }
+@media (max-width: 640px) {
+  h1 { font-size: 30px; }
+  .nav .links a:not(.cta) { display: none; }
+}
+.body h2 { font-family: var(--serif); font-weight: 500; color: var(--slate); font-size: 26px; line-height: 1.25; margin: 38px 0 14px; }
+</style>
+<meta name="description" content="On running an election office three weeks before November 3rd: training 250 workers, testing equipment, supporting 43,000 voters, and being the new guy again.">
+<link rel="canonical" href="https://bertstone.com/blog/election-work">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Bert Stone">
+<meta property="og:title" content="Three weeks before the election, I became the elections department IT guy">
+<meta property="og:description" content="On running an election office three weeks before November 3rd: training 250 workers, testing equipment, supporting 43,000 voters, and being the new guy again.">
+<meta property="og:url" content="https://bertstone.com/blog/election-work">
+<meta property="og:image" content="https://bertstone.com/bertstone-headshot-square.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Three weeks before the election, I became the elections department IT guy">
+<meta name="twitter:description" content="On running an election office three weeks before November 3rd: training 250 workers, testing equipment, supporting 43,000 voters, and being the new guy again.">
+<meta name="twitter:image" content="https://bertstone.com/bertstone-headshot-square.jpg">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4469d44e3ff94a4c8dab7040d3dd76eb"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<div class="page">
+  <nav class="nav">
+    <div class="brand">bert<b>stone</b>.com</div>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/#blog">Blog</a>
+      <a href="https://github.com/stonebert-png">GitHub</a>
+      <a href="/bert-stone-resume.pdf">Resume</a>
+    </div>
+  </nav>
+
+  <article>
+    <div class="eyebrow">Field Notes</div>
+    <h1>Three weeks before the election, I became the elections department IT guy</h1>
+    <div class="byline">2026-11-16 &nbsp;·&nbsp; <span class="cat">Ops</span></div>
+
+    <div class="body">
+      <p>I have been out of work since December, and it has given me more time to think than I have had in twelve years.</p>
+      <p>I have been pursuing a new role for the better part of this year. It has not gone as I hoped. That has bruised my ego, but I am not carrying it as a verdict on my work. My job or title does not say what I am worth. It is a tight market and a strange one, and I am not in an ideal location. I have not found an organization that was ready to say yes.</p>
+      <p>It has been the longest I have been out of work since I was fourteen years old.</p>
+      <p>So I took a job as an elections clerk for my county. The reason was simple enough: I had the time, I like the people, and the work is of the highest importance.</p>
+      <h2>How I got here</h2>
+      <p>In 2020 I watched a segment on my local news about the need for election workers. Seasonal election staff is largely retired community members, and during the pandemic many of those folks did not feel comfortable working a mid-pandemic election. Understandably.</p>
+      <p>I signed up. I had a remote job, a healthy immune system, and a sense of duty. Since then I have worked almost every election, missing a few during the busiest days of my previous role. I started as a poll worker, then became a precinct manager.</p>
+      <p>This year, while not working, I returned to it, and I was reminded of work that makes me feel valued and proud of what I accomplish.</p>
+      <p>I took an election official role before this election, a step up from the poll worker and precinct manager roles I had held before. And I have been busy. Three weeks before the election I took the job.</p>
+      <p>In that time I helped train 250 election workers. I tested and QA'd all of our election equipment. I prepared the documentation. Then I dove feet first into supporting 43,000 members of my community exercising their right to vote. We set up and provided the highest level of early voting we have offered to date.</p>
+      <h2>What the work actually is</h2>
+      <p>For those who do not know, elections work is under-resourced, under-paid, and relies on your community to happen several times every year. Leading up to and on Election Day there are government employees and community members who wake up at ungodly hours and work tirelessly to ensure you have access to free and fair elections.</p>
+      <p>This election season, your election officials and community members spent hours planning and strategizing to make sure a day like November 3rd happened, with little fanfare.</p>
+      <h2>Being the new guy again</h2>
+      <p>I have been a learner again, the new guy in a space where my prior experience does not impress anyone, but does drive the questions "can you help me share this doc?" and "do you know how to set up this printer?"</p>
+      <p>I quickly became the elections department IT guy. And I love it.</p>
+      <p>That is worth sitting with. Twelve years of running global IT operations, and the thing that made me useful in week one was knowing how to share a document and get a printer working. Nobody cared about my title. They cared that the thing in front of them worked. It is a good reminder that the value of operations work is never in the org chart. It is in whether the day goes smoothly for people who never think about you.</p>
+      <h2>Why this mattered to me</h2>
+      <p>What happened on November 3rd was not an accident. It was your local government and your community, and it was not political. I am proud to have been part of it. And if you voted, you should be proud of it too.</p>
+      <p>For anyone reading this and wondering what I am looking for next: a Director seat leading IT service management, service delivery, or end user operations, at an organization where the scale and the stakes are real. I am open to relocating for the right one. Beyond that, I am looking forward to whatever comes next.</p>
+      <p>What are you meant to be doing? When was the last time you were truly proud of the work you did? I want to hear about it.</p>
+    </div>
+  </article>
+
+  <footer>
+    <div>bert stone</div>
+    <div><a href="/#blog">Back to the site</a></div>
+  </footer>
+</div>
+</body>
+</html>
